@@ -1,0 +1,14 @@
+.hide
+{
+    display: none;
+}
+.category-income,
+.category-expenses
+{
+    position: absolute;
+    top: 200px;
+}
+.summa
+{
+    margin-top: 55px;
+}
