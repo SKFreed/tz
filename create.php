@@ -29,15 +29,16 @@
             <h2>Категория</h2>
             <div class="input-group mb-3 category-income" style="width: 33.8%">
 
-                <select class="form-select options-income" id="category" name="category">
+                <select class="form-select options-income" id="category" name="category1">
+                    <option selected>choose</option>
                     <option>Заработная плата</option>
                     <option>Иной источник</option>
                 </select>
             </div>
             <div class="input-group mb-3 category-expenses" style="width: 33.8%">
 
-                <select class="form-select options-expenses hide" id="category" name="category">
-
+                <select class="form-select options-expenses hide" id="category" name="category2">
+                    <option selected>choose</option>
                     <option> Продукты питания</option>
                     <option> Транспорт</option>
                     <option> Мобильная связь</option>

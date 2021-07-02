@@ -3,7 +3,29 @@
 $operations = $_POST['operations'];
 
 
-$category = $_POST['category'];
+$category1 = $_POST['category1'];
+if ($category1!=="choose")
+{
+    $category = $category1;
+}
+if ($category1 === "choose" & $category2 === "choose")
+{
+    $err = [
+        'message' => 'BAD_REQUEST'
+    ];
+    $err = json_encode($err);
+    http_response_code(400);
+    echo "<script type='text/javascript'>alert('$err');</script>";
+
+    die() ;
+
+}
+$category2 = $_POST['category2'];
+if ($category2!=="choose")
+{
+    $category = $category2;
+}
+
 $cost = $_POST['cost'];
 
 $pdo = new PDO("mysql:host=localhost;port=3306;charset=UTF8;dbname=tzbase", 'root', 'root');
