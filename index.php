@@ -69,7 +69,7 @@ $rows = $stmt->fetchAll();
     <form id="loginForm">
         <button type="submit" class="btn btn-outline-primary">Подвести итоги</button>
     </form>
-    <div id="result"></div>
+    <div id="result" style="display: none"></div>
 </div>
 <script>
     $(function () {
@@ -80,6 +80,7 @@ $rows = $stmt->fetchAll();
                 type: 'POST',
                 success: function (data) {
                     $('#result').html(data);
+                    $('#result').fadeIn();
                 }
             });
         });
