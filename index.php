@@ -29,8 +29,8 @@ $rows = $stmt->fetchAll();
 </head>
 <body>
 <div class="container">
-    <a href="create.php" class="btn btn-outline-success">Создать</a>
-    <table>
+    <a href="create.php" class="btn btn-outline-success create">Создать</a>
+    <table class="table">
         <thead>
         <tr>
 
@@ -68,21 +68,24 @@ $rows = $stmt->fetchAll();
 
     <form id="loginForm">
         <button type="submit" class="btn btn-outline-primary">Подвести итоги</button>
-        <script>
-            $(function () {
-                $("#loginForm").submit(function (event) {
-                    event.preventDefault();
-                    $.ajax({
-                        url: 'ajax.php',
-                        data: $("#loginForm").serialize(),
-                        type: 'POST',
-                        success: function (data) {
-                            $('#result').html(data);
-                        }
-                    });
-            })</script>
     </form>
+    <div id="result"></div>
 </div>
+<script>
+    $(function () {
+        $("#loginForm").submit(function (event) {
+            event.preventDefault();
+            $.ajax({
+                url: 'ajax.php',
+                type: 'POST',
+                success: function (data) {
+                    $('#result').html(data);
+                }
+            });
+        });
+    });
+</script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -4,26 +4,13 @@ $operations = $_POST['operations'];
 
 
 $category1 = $_POST['category1'];
-if ($category1!=="choose")
-{
-    $category = $category1;
-}
-if ($category1 === "choose" & $category2 === "choose")
-{
-    $err = [
-        'message' => 'BAD_REQUEST'
-    ];
-    $err = json_encode($err);
-    http_response_code(400);
-    echo "<script type='text/javascript'>alert('$err');</script>";
-
-    die() ;
-
-}
 $category2 = $_POST['category2'];
-if ($category2!=="choose")
+$operations == 'Расход' ? $category = $category2 : $category = $category1;
+
+if ($category =="choose")
 {
-    $category = $category2;
+    echo "<script type='text/javascript'>alert('$err');</script>";
+    die();
 }
 
 $cost = $_POST['cost'];
@@ -41,6 +28,6 @@ $now->setTimezone(new DateTimeZone('Etc/GMT-5'));
 $timestring = $now->format('Y-m-d H:i:s');
 $stmt->bindParam(':dateupdate', $timestring);
 $stmt->execute();
-
+$err = $stmt->errorInfo();
 
 header('Location: /');
