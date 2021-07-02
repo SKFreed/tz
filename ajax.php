@@ -9,8 +9,8 @@ $income = $stmt->fetch();
 $stmtt = $pdo->prepare("SELECT SUM(cost) FROM tztable WHERE operations = 'Расход'");
 $stmtt->execute();
 $expenses = $stmtt->fetch();
+?>
+Доходы составили: <?= $income[0] ?> <br>
 
-echo "Доходы составили: $income[0]"; ?><br>
-<?php
-echo "Расходы составили: $expenses[0]";
+Расходы составили: <?= $expenses[0] ?>
 
