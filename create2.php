@@ -2,6 +2,7 @@
 
 $operations = $_POST['operations'];
 
+
 $category = $_POST['category'];
 $cost = $_POST['cost'];
 

@@ -22,8 +22,8 @@
             <div class="input-group mb-3" style="width: 50%">
                 <label class="input-group-text" for="operations">Доход/Расход</label>
                 <select class="form-select operations" id="operations" name="operations" >
-                    <option value="income">Доход</option>
-                    <option value="expenses">Расход</option>
+                    <option value="Доход">Доход</option>
+                    <option value="Расход">Расход</option>
                 </select>
             </div>
             <h2>Категория</h2>

@@ -6,12 +6,12 @@ operation.onchange = function () //Обработчик событий, выпо
 {
 
 
-    if (operation.value === "income") {
+    if (operation.value === "Доход") {
         opIn.classList.remove('hide') //classList - метод, через который происходит взаимодействия с классами, в зависимости от значений(add,remove,toggle(переключает),contains)
     } else {
         opIn.classList.add('hide')
     }
-    if (operation.value === "expenses") {
+    if (operation.value === "Расход") {
         opEx.classList.remove('hide')
     } else {
         opEx.classList.add('hide')
