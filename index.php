@@ -72,8 +72,8 @@ $rows = $stmt->fetchAll();
             $(function () {
                 $("#loginForm").submit(function (event) {
                     event.preventDefault();
-                    $.sum({
-                        url: 'sum.php',
+                    $.ajax({
+                        url: 'ajax.php',
                         data: $("#loginForm").serialize(),
                         type: 'POST',
                         success: function (data) {
