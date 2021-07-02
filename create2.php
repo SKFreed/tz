@@ -1,8 +1,6 @@
 <?php
 
 $operations = $_POST['operations'];
-
-
 $category1 = $_POST['category1'];
 $category2 = $_POST['category2'];
 $operations == 'Расход' ? $category = $category2 : $category = $category1;
