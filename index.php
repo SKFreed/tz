@@ -34,8 +34,6 @@ $rows = $stmt->fetchAll();
     <table class="table">
         <thead>
         <tr>
-
-
             <th>Доход/расход</th>
             <th>Категория</th>
             <th>Сумма</th>
@@ -44,18 +42,14 @@ $rows = $stmt->fetchAll();
         </tr>
         </thead>
         <tbody>
-
         <?php
         foreach ($rows as $row) {
             ?>
             <tr>
-
-
                 <td><?= $row['operations'] ?></td>
                 <td><?= $row['category'] ?></td>
                 <td><?= $row['cost'] ?></td>
                 <td><?= $row['dateupdate'] ?></td>
-
                 <td>
                     <a class="btn btn-outline-primary" href="view.php?id=<?= $row['id'] ?>">Посмотреть</a>
                     <a class="btn btn-outline-primary" href="edit.php?id=<?= $row['id'] ?>">Изменить</a>
@@ -63,7 +57,6 @@ $rows = $stmt->fetchAll();
                 </td>
             </tr>
         <?php } ?>
-
         </tbody>
     </table>
     <button type="submit" class="btn btn-outline-primary itog">Подвести итоги</button>
@@ -72,7 +65,6 @@ $rows = $stmt->fetchAll();
 <script>
     $(function () {
         $(".itog").click(function (event) {
-            event.preventDefault();
             $.ajax({
                 url: 'ajax.php',
                 type: 'POST',
@@ -84,7 +76,6 @@ $rows = $stmt->fetchAll();
         });
     });
 </script>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
         crossorigin="anonymous"></script>
