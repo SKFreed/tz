@@ -1,5 +1,5 @@
 <?php
-$pdo = new PDO("mysql:host=localhost;port=3306;charset=UTF8;dbname=tzbase", 'root', 'root');
+require_once "dbconfig.php";
 
 
 $stmt = $pdo->prepare("SELECT SUM(cost) FROM tztable WHERE operations = 'Доход'");

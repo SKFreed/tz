@@ -1,11 +1,5 @@
 <?php
-
-spl_autoload_register(function ($class_name) {
-    include $class_name . '.php';
-});
-
-$pdo = new PDO("mysql:host=localhost;port=3306;charset=UTF8;dbname=tzbase", 'root', 'root');
-
+require_once "dbconfig.php";
 
 $stmt = $pdo->prepare("SELECT * FROM tztable");
 $stmt->execute();
