@@ -2,13 +2,27 @@
 {
     display: none;
 }
-.category-income,
-.category-expenses
+
+.options-income,
+.options-expenses
 {
-    position: absolute;
-    top: 200px;
+    top: 0px;
 }
+
 .summa
 {
     margin-top: 55px;
+}
+.add
+{
+    top: -34px;
+    left: 170px;
+    position: relative;
+}
+@media (min-width: 350px) and (max-width:768px) {
+   .add
+   {
+       left: 129px;
+       top: -33px;
+   }
 }

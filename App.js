@@ -1,6 +1,6 @@
 let operation = document.querySelector('.operations');
-let opIn = document.querySelector('.options-income')
-let opEx = document.querySelector('.options-expenses')
+let opIn = document.querySelector('.category-income')
+let opEx = document.querySelector('.category-expenses')
 
 operation.onchange = function () //Обработчик событий, выполняет действия при изменении значения раскрывающего списка
 {

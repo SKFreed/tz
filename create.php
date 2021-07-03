@@ -1,3 +1,11 @@
+<?php
+require_once "dbconfig.php";
+
+$stmt = $pdo->prepare("SELECT * FROM tzexpenses");
+$stmt->execute();
+$rows = $stmt->fetchAll();
+
+?>
 <!doctype html>
 <html lang="ru">
 <head>
@@ -14,7 +22,7 @@
 </head>
 <body>
 <div class="container">
-    <a class="btn btn-outline-primary" href="/">Назад</a>
+    <a class="btn btn-outline-primary" href="/" style="margin-top: 34px">Назад</a>
     <h1>Создание записи</h1>
     <form method="post" action="create2.php">
         <div class="mb-3">
@@ -27,6 +35,7 @@
                 </select>
             </div>
             <h2>Категория</h2>
+            <a href="category.php" class="add">Добавить</a>
             <div class="input-group mb-3 category-income" style="width: 33.8%">
 
                 <select class="form-select options-income" id="category" name="category1">
@@ -35,16 +44,14 @@
                     <option>Иной источник</option>
                 </select>
             </div>
-            <div class="input-group mb-3 category-expenses" style="width: 33.8%">
+            <div class="input-group mb-3 category-expenses hide" style="width: 33.8%">
 
-                <select class="form-select options-expenses hide" id="category" name="category2">
-
-                    <option selected> Продукты питания</option>
-                    <option> Транспорт</option>
-                    <option> Мобильная связь</option>
-                    <option> Интернет</option>
-                    <option> Развлечения</option>
-                    <option> Другое</option>
+                <select class="form-select options-expenses " id="category" name="category2">
+                    <?php
+                    foreach ($rows as $row) {
+                    ?>
+                    <option><?= $row['expenses'] ?></option>
+                    <?php } ?>
                 </select>
             </div>
 
@@ -57,7 +64,7 @@
     </form>
 </div>
 
-<script src="App.js"></script>
+
 
 
 <!-- Вариант 1: Bootstrap в связке с Popper -->
@@ -65,6 +72,7 @@
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
         crossorigin="anonymous"></script>
 
+<script src="App.js"></script>
 <!-- Вариант 2: Bootstrap JS отдельно от Popper
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
