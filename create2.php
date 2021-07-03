@@ -4,6 +4,7 @@ require_once "dbconfig.php";
 $operations = $_POST['operations'];
 $category1 = $_POST['category1'];
 $category2 = $_POST['category2'];
+$dataStart = $_POST['dataStart'];
 $operations == 'Расход' ? $category = $category2 : $category = $category1; // тернарная операция
 $cost = $_POST['cost'];
 $sql = "INSERT INTO tztable(operations, dateupdate, category, cost) VALUES(:operations, :dateupdate, :category, :cost) ";

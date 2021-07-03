@@ -16,6 +16,20 @@
 CREATE DATABASE IF NOT EXISTS `tzbase` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `tzbase`;
 
+-- Дамп структуры для таблица tzbase.tzexpenses
+CREATE TABLE IF NOT EXISTS `tzexpenses` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `expenses` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Дамп данных таблицы tzbase.tzexpenses: ~2 rows (приблизительно)
+/*!40000 ALTER TABLE `tzexpenses` DISABLE KEYS */;
+INSERT INTO `tzexpenses` (`id`, `expenses`) VALUES
+	(2, 'Продукты питания'),
+	(3, 'Транспорт');
+/*!40000 ALTER TABLE `tzexpenses` ENABLE KEYS */;
+
 -- Дамп структуры для таблица tzbase.tztable
 CREATE TABLE IF NOT EXISTS `tztable` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -24,9 +38,9 @@ CREATE TABLE IF NOT EXISTS `tztable` (
   `cost` int DEFAULT NULL,
   `dateupdate` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Дамп данных таблицы tzbase.tztable: ~4 rows (приблизительно)
+-- Дамп данных таблицы tzbase.tztable: ~11 rows (приблизительно)
 /*!40000 ALTER TABLE `tztable` DISABLE KEYS */;
 INSERT INTO `tztable` (`id`, `operations`, `category`, `cost`, `dateupdate`) VALUES
 	(19, 'Расход', 'Мобильная связь', 100, '2021-07-02 23:51:26'),
@@ -36,7 +50,10 @@ INSERT INTO `tztable` (`id`, `operations`, `category`, `cost`, `dateupdate`) VAL
 	(40, 'Доход', 'Заработная плата', 100000, '2021-07-03 19:21:21'),
 	(41, 'Доход', 'Заработная плата', 70000, '2021-07-03 19:49:28'),
 	(42, 'Доход', 'Иной источник', 155, '2021-07-03 19:56:08'),
-	(43, 'Доход', 'Заработная плата', 66, '2021-07-03 19:56:22');
+	(43, 'Доход', 'Заработная плата', 66, '2021-07-03 19:56:22'),
+	(44, 'Расход', 'Продукты питания', 12233, '2021-07-03 20:28:55'),
+	(45, 'Расход', 'Продукты питания', 11111, '2021-07-03 20:29:40'),
+	(46, 'Расход', 'Продукты питания', 99, '2021-07-03 20:29:58');
 /*!40000 ALTER TABLE `tztable` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

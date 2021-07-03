@@ -54,6 +54,7 @@ $rows = $stmt->fetchAll();
                     <?php } ?>
                 </select>
             </div>
+            <input type="date" name="dataStart">
 
             <div class="summa">
             <label for="cost" class="form-label">Сумма</label>
